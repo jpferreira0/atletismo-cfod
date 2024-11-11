@@ -1,0 +1,23 @@
+{
+  "name": "atletismo-cfod",
+  "version": "0.0.1",
+  "description": "Repository of the \"Academia de Atletismo do C.F. Oliveira do Douro\" main website.",
+  "main": "app.js",
+  "scripts": {
+    "dev_nodemon": "nodemon app/app.js dev"
+  },
+  "author": "João Ferreira",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^3.0.3",
+    "sass": "^1.80.6"
+  },
+  "dependencies": {
+    "express": "^4.21.1",
+    "hbs": "^4.2.0",
+    "express-handlebars": "^8.0.1",
+    "i18next": "^23.16.5",
+    "i18next-http-middleware": "^3.6.0",
+    "i18next-fs-backend": "^2.3.2"
+  }
+}
