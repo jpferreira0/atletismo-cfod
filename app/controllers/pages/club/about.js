@@ -1,5 +1,5 @@
 const aboutController = (req, res) => {
-    res.renderPage('aboutus', {
+    res.renderPage('club/about', {
         layout: 'main',
     });
 };

@@ -2,13 +2,21 @@
 const express = require('express');
 const router = express.Router();
 
+// Homepage route
 const homepageController = require('../controllers/pages/homepage');
 router.get('/', homepageController);
 
-const aboutController = require('../controllers/pages/aboutController');
-router.get('/aboutus', aboutController);
+// Other pages routes
+const appsRoutes = require('./pages/apps');
+const clubRoutes = require('./pages/club');
+const competitionsRoutes = require('./pages/competitions');
+const rankingResultsRoutes = require('./pages/ranking_results');
 
-const practiceController = require('../controllers/pages/practice');
-router.get('/practice', practiceController);
+
+// Applying routess
+router.use('/apps', appsRoutes);
+router.use('/clube', clubRoutes);
+router.use('/competicoes', competitionsRoutes);
+router.use('/marcas', rankingResultsRoutes);
 
 module.exports = router;
