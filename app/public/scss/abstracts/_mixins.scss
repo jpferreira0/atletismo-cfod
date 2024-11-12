@@ -1,0 +1,11 @@
+//? Reusable code snippets that can be used throughout the project
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin navbar-style($background, $text-color) {
+    background-color: $background;
+    color: $text-color;
+}
