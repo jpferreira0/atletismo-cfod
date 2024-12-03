@@ -1,6 +1,6 @@
 {
   "name": "atletismo-cfod",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Repository of the \"Academia de Atletismo do C.F. Oliveira do Douro\" main website.",
   "main": "app.js",
   "scripts": {

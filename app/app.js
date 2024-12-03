@@ -41,7 +41,7 @@ middlewares.forEach(middleware => {
 //? ----------------------------
 
 //? --- Public folder location ---
-const publicPath = path.join(__dirname, './public');
+const publicPath = path.join(__dirname, 'public');
 app.use(express.static(publicPath));
 //? ------------------------------
 

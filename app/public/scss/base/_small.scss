@@ -1,0 +1,44 @@
+@use '../abstracts' as *;
+@use "sass:map";
+
+body{
+    @media screen and (max-width: map.get($breakpoint, small)) { // Small size
+        .navbar {
+            position: fixed;
+            width: 250px; // Sidebar width
+            height: 100vh;
+            left: 0;
+            top: 0;
+            z-index: 1000; // Ensure it appears on top of all elements
+            //transform: translateX(-250px); // Initially hidden
+            //transition: transform 0.3s ease;
+          }
+      
+          .navbar.open {
+            transform: translateX(0); // Show the navbar
+          }
+      
+          .toggle-button {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            width: 30px;
+            height: 30px;
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1001; // Ensure it appears on top of the navbar
+          }
+      
+          .toggle-button.open::after {
+            content: 'Click'; // Arrow pointing left
+          }
+      
+          .toggle-button.closed::after {
+            content: 'Click'; // Arrow pointing right
+          }
+    }
+}

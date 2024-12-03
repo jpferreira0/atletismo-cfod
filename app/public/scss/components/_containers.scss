@@ -1,0 +1,11 @@
+@use '../abstracts' as *;
+
+.page-header{
+    background-color: $blue;
+    color: $white;
+    text-align: center;
+    width: 100%;
+    height: toRem(60);
+    position: absolute;
+    left: 0px;
+}

@@ -1,90 +1,255 @@
 @use '../abstracts' as *;
+@use "sass:map";
 
 .navbar {
-    //background-color: $blue; // Safe version
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, $blue 50%, $blue-light 100%);
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding: 1em;
-    width: 100%;
-    height:100px;
+    background: rgba($blue, 0.8);
+    background: linear-gradient(90deg, rgb(52, 137, 177) 0%, $blue 50%, $blue-light 100%);
 
+    @media screen and (min-width: calc(map.get($breakpoint, medium) + 1px)) { // Large size
 
-    .logo {
+        .logo {
+            position: inherit;
+            left: 5%;
+            top: calc($navbar-height / 2);
 
-        position: inherit;
-        left: 5%;
-        top: 40px;
-
-        a{
-            text-decoration: none;
-        }
-
-        span{
-            color: $white;
-            font-size: 1.5em;
-            font-weight: bold;
-        }
-    }
-
-    .items {
-        text-align: left;
-        position: inherit;
-        right: 10%;
-        top: 60px;
-
-        ul{
-            list-style: none;
-            display: flex;
-            margin: 0;
-        }
-        li {
-            position: relative;
-            background-color: $white;
-            border: 1px solid $blue;
-            width: 120px;
-            height: 60px;
-
-            &:hover {
-                background-color: $blue-light;
-            }
-            
-            a {
-                color: $white;
+            a{
                 text-decoration: none;
-                //padding: 1em;
-                display: block;
             }
 
             span{
-                color: $blue;
-                text-decoration: none;
-                text-align: center;
-                display: block;
+                color: $white;
+                font-size: 1.5em;
+                font-weight: bold;
             }
-            .dropdown-content {
-                display: none;
-                position: inherit;
-                top: 20px;
-                z-index: 1;
+        }
 
+        .items {
+            position: inherit;
+            right: 10%;
+            top: $navbar-height - $navbar-item-height;
+
+            ul{
+                list-style: none;
+                display: flex;
+                margin: 0;
+            }
+            li {
+                position: relative;
+                background-color: $white;
+                border: 1px solid $blue;
+                width: 120px;
+                height: $navbar-item-height;
+            }
+            .section{
+                li:hover {
+                    background-color: $blue-light;
+                }
+                
                 a {
+                    color: $white;
+                    text-decoration: none;
                     //padding: 1em;
-                    background-color: $white;
-                    width: 120px;
-                    height: 60px;
                     display: block;
                 }
-                a::hover {
-                    background-color: $blue-light;
-                    color: $white;
+
+                span{
+                    color: $blue;
+                    padding-top: calc($navbar-item-height/4);
+                    text-decoration: none;
+                    text-align: center;
+                    display: block;
+                }
+                .content {
+                    display: none;
+                    position: absolute;
+                    top: $navbar-item-height;
+                    left: 0px;
+                    z-index: 1;
+
+                    a {
+                        //padding: 1em;
+                        background-color: $white;
+                        width: 120px;
+                        height: 60px;
+                        display: block;
+                    }
+                    a::hover {
+                        background-color: $blue-light;
+                        color: $white;
+                    }
+                }
+
+                &:hover .content {
+                    display: block;
+                    transform: inherit;
+                    transition-duration: 2s;
                 }
             }
+        }
+    }
 
-            &:hover .dropdown-content {
-                display: block;
+    @media screen and (min-width: calc(map.get($breakpoint, small) + 1px)) and (max-width: map.get($breakpoint, medium)) { // Medium size
+
+        .logo {
+            position: inherit;
+            left: 5%;
+            top: calc($navbar-height / 2);
+
+            a{
+                text-decoration: none;
+            }
+
+            span{
+                color: $white;
+                font-size: 1.5em;
+                font-weight: bold;
+            }
+        }
+
+        .items {
+            position: inherit;
+            left: 10%;
+            top: calc($navbar-height / 2);
+
+            ul{
+                list-style: none;
+                display: flex;
+                margin: 0;
+            }
+            li {
+                position: relative;
+                background-color: $white;
+                border: 1px solid $blue;
+                width: 120px;
+                height: $navbar-item-height;
+            }
+            .section{
+                li:hover {
+                    background-color: $blue-light;
+                }
+                
+                a {
+                    color: $white;
+                    text-decoration: none;
+                    //padding: 1em;
+                    display: block;
+                }
+
+                span{
+                    color: $blue;
+                    padding-top: calc($navbar-item-height/4);
+                    text-decoration: none;
+                    text-align: center;
+                    display: block;
+                }
+                .content {
+                    display: none;
+                    position: absolute;
+                    top: $navbar-item-height;
+                    left: 0px;
+                    z-index: 1;
+
+                    a {
+                        //padding: 1em;
+                        background-color: $white;
+                        width: 120px;
+                        height: 60px;
+                        display: block;
+                    }
+                    a::hover {
+                        background-color: $blue-light;
+                        color: $white;
+                    }
+                }
+
+                &:hover .content {
+                    display: block;
+                    transform: inherit;
+                    transition-duration: 2s;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: map.get($breakpoint, small)) { // Small size
+
+        .logo {
+            position: inherit;
+            left: 5%;
+            top: calc($navbar-height / 2);
+
+            a{
+                text-decoration: none;
+            }
+
+            span{
+                color: $white;
+                font-size: 1.5em;
+                font-weight: bold;
+            }
+        }
+
+        .items {
+            position: inherit;
+            left: 10%;
+            top: toRem(400);
+
+            ul{
+                list-style: none;
+                //display: flex;
+                margin: 0;
+            }
+            li {
+                position: relative;
+                background-color: $white;
+                border: 1px solid $blue;
+                width: 120px;
+                height: $navbar-item-height;
+            }
+            .section{
+                li:hover {
+                    background-color: $blue-light;
+                }
+                
+                a {
+                    color: $white;
+                    text-decoration: none;
+                    //padding: 1em;
+                    display: block;
+                }
+
+                span{
+                    color: $blue;
+                    padding-top: calc($navbar-item-height/4);
+                    text-decoration: none;
+                    text-align: center;
+                    display: block;
+                }
+                .content {
+                    display: none;
+                    position: absolute;
+                    top: $navbar-item-height;
+                    left: 0px;
+                    z-index: 1;
+
+                    a {
+                        //padding: 1em;
+                        background-color: $white;
+                        width: 120px;
+                        height: 60px;
+                        display: block;
+                    }
+                    a::hover {
+                        background-color: $blue-light;
+                        color: $white;
+                    }
+                }
+
+                &:hover .content {
+                    display: block;
+                    transform: inherit;
+                    transition-duration: 2s;
+                }
             }
         }
     }

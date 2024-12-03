@@ -1,0 +1,32 @@
+@use '../abstracts' as *;
+@use "sass:map";
+
+body{
+    @media screen and (min-width: calc(map.get($breakpoint, medium) + 1px)) { // Large size
+        .banner {
+            position: absolute;
+            width: 80%; 
+            // margin: 0 auto;
+            height: 100px;
+            left: 10%;
+            right: 10%;
+            top: $navbar-height;
+            background-color: rgb(128, 128, 128, 0.5);
+        //   background: url('path/to/your/background-image.jpg') no-repeat center center;
+        //   background-size: cover;
+        }
+    
+        // body {
+        // //   background: url('path/to/your/background-image.jpg') no-repeat center center;
+        // //   background-size: cover;
+        // }
+    
+        .navbar {
+            position: absolute;
+            width: 100%;
+            height: $navbar-height;
+            top: 0px;
+            left: 0px;
+        }
+      }
+}

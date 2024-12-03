@@ -1,5 +1,6 @@
 //? All the variables used in the project are defined here.
-
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
 // -----------------------------------------
 // Colors
 // -----------------------------------------
@@ -7,4 +8,23 @@ $blue: #0d58a6;
 $blue-light: #2c82d1;
 $color-secondary: #444;
 $white: #fff;
+
+// -----------------------------------------
+// Fonts
+// -----------------------------------------
 $font-stack: Arial, sans-serif;
+
+// -----------------------------------------
+// Sizes
+// -----------------------------------------
+$navbar-height: toRem(120); // Applied when large Resolution
+$navbar-width: toRem(250); // Applied when small resolution
+$navbar-item-height: toRem(50);
+
+// -----------------------------------------
+// Breakpoints
+// -----------------------------------------
+$breakpoint: (
+    small: 800px,
+    medium: 1024px,
+);
