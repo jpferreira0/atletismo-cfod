@@ -4,27 +4,67 @@
 // -----------------------------------------
 // Colors
 // -----------------------------------------
-$blue: #0d58a6;
-$blue-light: #2c82d1;
+
+/* Common Colors */
+$color-blue: #0d58a6;
+$color-blue-light: #2c82d1;
+$color-white: #fff;
+$color-black: #000;
+
 $color-secondary: #444;
-$white: #fff;
 
 // -----------------------------------------
 // Fonts
 // -----------------------------------------
 $font-stack: Arial, sans-serif;
 
+/* --- Font Sizes --- */
+
+/* Common Font Sizes */
+$font-size-16px: toRem(16);
+$font-size-18px: toRem(18);
+$font-size-20px: toRem(20);
+
+/* Personalized Font Sizes */
+$banner-block-text-header-font-size: toRem(28);
+$banner-button-text: toRem(18);
 // -----------------------------------------
 // Sizes
 // -----------------------------------------
-$navbar-height: toRem(120); // Applied when large Resolution
+
+/* Common Sizes */
+$size-0px: toRem(0);
+$size-1px: toRem(1);
+$size-5px: toRem(5);
+$size-10px: toRem(10);
+$size-25px: toRem(25);
+$size-50px: toRem(50);
+$size-100px: toRem(100);
+
+/* Navbar Sizes */
+$navbar-height: toRem(120); // Applied when large resolution
 $navbar-width: toRem(250); // Applied when small resolution
 $navbar-item-height: toRem(50);
+
+/* Banner Sizes */
+$banner-width: toRem(1200); // Applied when large resolution
+$banner-header-height: toRem(120);
+$banner-block-width: toRem(900);
+$banner-block-height: toRem(240);
+$banner-block-margin-bottom: toRem(20);
+$banner-block-side-padding: toRem(10);
+$banner-block-side-width: calc(($banner-block-width / 2) - $banner-block-side-padding);
+$banner-block-text-header-padding: toRem(3);
+
+/* Button Sizes */
+$banner-button-width: toRem(120);
+$banner-button-height: toRem(40);
+
 
 // -----------------------------------------
 // Breakpoints
 // -----------------------------------------
 $breakpoint: (
     small: 800px,
-    medium: 1024px,
+    medium: 1200px,
 );

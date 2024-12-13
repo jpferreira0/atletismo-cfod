@@ -2,18 +2,25 @@
 @use "sass:map";
 
 body{
-    @media screen and (min-width: calc(map.get($breakpoint, medium) + 1px)) { // Large size
+    @media screen and (min-width: calc(map.get($breakpoint, medium) + 1px)) { // Large size 1200px and above
+        background-color: $color-secondary;
+
         .banner {
+            /* Position */
             position: absolute;
-            width: 80%; 
-            // margin: 0 auto;
-            height: 100px;
-            left: 10%;
-            right: 10%;
             top: $navbar-height;
-            background-color: rgb(128, 128, 128, 0.5);
-        //   background: url('path/to/your/background-image.jpg') no-repeat center center;
-        //   background-size: cover;
+            left: calc((100% - $banner-width) / 2);
+
+            /* Sizes */
+            width: $banner-width; 
+            height: 100%;
+            
+            /* Colors */
+            background-color: $color-white;
+
+            /* Border */
+
+            /* Text */
         }
     
         // body {
@@ -22,11 +29,14 @@ body{
         // }
     
         .navbar {
-            position: absolute;
+            /* Position */
+            position: fixed;
             width: 100%;
             height: $navbar-height;
             top: 0px;
             left: 0px;
+            z-index: 9999;
+
         }
-      }
+    }
 }

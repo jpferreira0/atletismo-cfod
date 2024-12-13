@@ -2,8 +2,8 @@
 @use "sass:map";
 
 .navbar {
-    background: rgba($blue, 0.8);
-    background: linear-gradient(90deg, rgb(52, 137, 177) 0%, $blue 50%, $blue-light 100%);
+    background: rgba($color-blue, 0.8);
+    background: linear-gradient(90deg, rgb(52, 137, 177) 0%, $color-blue 50%, $color-blue-light 100%);
 
     @media screen and (min-width: calc(map.get($breakpoint, medium) + 1px)) { // Large size
 
@@ -17,7 +17,7 @@
             }
 
             span{
-                color: $white;
+                color: $color-white;
                 font-size: 1.5em;
                 font-weight: bold;
             }
@@ -35,25 +35,25 @@
             }
             li {
                 position: relative;
-                background-color: $white;
-                border: 1px solid $blue;
+                background-color: $color-white;
+                border: 1px solid $color-blue;
                 width: 120px;
                 height: $navbar-item-height;
             }
             .section{
                 li:hover {
-                    background-color: $blue-light;
+                    background-color: $color-blue-light;
                 }
                 
                 a {
-                    color: $white;
+                    color: $color-white;
                     text-decoration: none;
                     //padding: 1em;
                     display: block;
                 }
 
                 span{
-                    color: $blue;
+                    color: $color-blue;
                     padding-top: calc($navbar-item-height/4);
                     text-decoration: none;
                     text-align: center;
@@ -68,14 +68,14 @@
 
                     a {
                         //padding: 1em;
-                        background-color: $white;
+                        background-color: $color-white;
                         width: 120px;
                         height: 60px;
                         display: block;
                     }
                     a::hover {
-                        background-color: $blue-light;
-                        color: $white;
+                        background-color: $color-blue-light;
+                        color: $color-white;
                     }
                 }
 
@@ -100,7 +100,7 @@
             }
 
             span{
-                color: $white;
+                color: $color-white;
                 font-size: 1.5em;
                 font-weight: bold;
             }
@@ -118,25 +118,25 @@
             }
             li {
                 position: relative;
-                background-color: $white;
-                border: 1px solid $blue;
+                background-color: $color-white;
+                border: 1px solid $color-blue;
                 width: 120px;
                 height: $navbar-item-height;
             }
             .section{
                 li:hover {
-                    background-color: $blue-light;
+                    background-color: $color-blue-light;
                 }
                 
                 a {
-                    color: $white;
+                    color: $color-white;
                     text-decoration: none;
                     //padding: 1em;
                     display: block;
                 }
 
                 span{
-                    color: $blue;
+                    color: $color-blue;
                     padding-top: calc($navbar-item-height/4);
                     text-decoration: none;
                     text-align: center;
@@ -151,14 +151,14 @@
 
                     a {
                         //padding: 1em;
-                        background-color: $white;
+                        background-color: $color-white;
                         width: 120px;
                         height: 60px;
                         display: block;
                     }
                     a::hover {
-                        background-color: $blue-light;
-                        color: $white;
+                        background-color: $color-blue-light;
+                        color: $color-white;
                     }
                 }
 
@@ -183,7 +183,7 @@
             }
 
             span{
-                color: $white;
+                color: $color-white;
                 font-size: 1.5em;
                 font-weight: bold;
             }
@@ -201,25 +201,25 @@
             }
             li {
                 position: relative;
-                background-color: $white;
-                border: 1px solid $blue;
+                background-color: $color-white;
+                border: 1px solid $color-blue;
                 width: 120px;
                 height: $navbar-item-height;
             }
             .section{
                 li:hover {
-                    background-color: $blue-light;
+                    background-color: $color-blue-light;
                 }
                 
                 a {
-                    color: $white;
+                    color: $color-white;
                     text-decoration: none;
                     //padding: 1em;
                     display: block;
                 }
 
                 span{
-                    color: $blue;
+                    color: $color-blue;
                     padding-top: calc($navbar-item-height/4);
                     text-decoration: none;
                     text-align: center;
@@ -234,14 +234,14 @@
 
                     a {
                         //padding: 1em;
-                        background-color: $white;
+                        background-color: $color-white;
                         width: 120px;
                         height: 60px;
                         display: block;
                     }
                     a::hover {
-                        background-color: $blue-light;
-                        color: $white;
+                        background-color: $color-blue-light;
+                        color: $color-white;
                     }
                 }
 

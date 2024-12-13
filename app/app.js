@@ -15,7 +15,8 @@ i18next
   .use(i18nMiddleware.LanguageDetector)
   .init({
     fallbackLng: 'pt',
-    ns: ['translation'], // Define available namespaces
+    lng: ['pt'],
+    ns: ['pages/homepage'], // Define available namespaces
     defaultNS: 'translation', // Set default namespace if not specified
     backend: {
       loadPath: path.join(__dirname,'./locales/{{lng}}/{{ns}}.json') // Load path to include namespace

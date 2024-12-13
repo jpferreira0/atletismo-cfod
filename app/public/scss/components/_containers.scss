@@ -1,11 +1,142 @@
 @use '../abstracts' as *;
 
-.page-header{
-    background-color: $blue;
-    color: $white;
-    text-align: center;
-    width: 100%;
-    height: toRem(60);
+.b-header{
+    /* Position */
     position: absolute;
-    left: 0px;
+    top: $size-0px;
+    left: $size-0px;
+
+    /* Sizes */
+    width: 100%;
+    height: $banner-header-height;
+
+    /* Colors */
+    background-color: $color-blue;
+    color: $color-white;
+
+    /* Text */ 
+    text-align: center;
+}
+.b-content{
+    /* Position */
+    position: relative;
+    top: $banner-header-height;
+    left: $size-0px;
+
+    /* Sizes */
+    width: 100%; 
+    height: auto;
+
+    /* Colors */
+    background-color: $color-white;
+
+    .b-block{
+        /* Position */
+        position: relative;
+        top: calc($banner-block-height / 2);
+        left: calc((100% - $banner-block-width) / 2);
+
+        /* Sizes */
+        width: $banner-block-width;
+        height: $banner-block-height;
+        
+        /* Margins */
+        margin-bottom: $banner-block-margin-bottom;
+
+        /* Border */
+        border-style: solid;
+        border-width: toRem(5) toRem(10);
+        border-color: $color-blue;
+        border-radius: toRem(5);
+
+        .b-block-left{
+            /* Position */
+            position: absolute;
+            top: $size-0px;
+            left: $size-0px;
+
+            /* Sizes */
+            width: $banner-block-side-width;
+            height: $banner-block-height;
+        }
+
+        .b-block-right{
+            /* Position */
+            position: absolute;
+            top: $size-0px;
+            right: $size-0px;
+
+            /* Sizes */
+            width: $banner-block-side-width;
+            height: $banner-block-height;
+        }
+
+        .b-block-image{
+            /* MUDAR */
+            background-color: $color-black;
+        }
+
+        .b-block-text{
+            /* Margins */
+            padding-left: $banner-block-side-padding;
+            padding-right: $banner-block-side-padding;
+            /* Colors */
+            background-color: $color-white;
+
+            .b-block-text-header{
+                /* Position */
+                position: relative;
+
+                /* Margins */
+                padding-top: $banner-block-text-header-padding;
+                padding-bottom: $banner-block-text-header-padding;
+
+                /* Colors */
+                color: $color-black;
+
+                /* Border */
+                border-bottom-style: solid; 
+                border-color: $color-blue;
+
+                /* Text */
+                text-align: center;
+                font-size: $banner-block-text-header-font-size;
+                font-weight: bold;
+            }
+
+            .b-block-text-content{
+                /* Position */
+                position: relative;
+                top: $size-25px;
+
+                /* Colors */
+                color: $color-black;
+
+                /* Text */
+                text-align: left;
+            }
+
+            .b-block-text-button{
+                /* Position */
+                position: absolute;
+                bottom: $size-10px;
+                left: calc(50% - ($banner-button-width / 2));
+
+                /* Text */
+            }
+        }
+    }
+}
+
+.b-button{
+    /* Size */
+    width: $banner-button-width;
+    height: $banner-button-height;
+
+    /* Colors */
+    background-color: $color-blue-light;
+    color: $color-white;
+
+    /* Others */
+    cursor: pointer;
 }
