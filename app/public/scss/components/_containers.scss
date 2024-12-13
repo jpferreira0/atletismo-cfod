@@ -12,10 +12,28 @@
 
     /* Colors */
     background-color: $color-blue;
-    color: $color-white;
 
-    /* Text */ 
+    /* Text */
     text-align: center;
+
+    .b-header-title{
+        /* Position */
+        position: relative;
+        top: $size-10px;
+
+        /* Text */
+        font-size: $banner-header-title-font-size;
+        color: $color-white;
+    }
+    .b-header-slogan{
+        /* Position */
+        position: relative;
+        top: $size-10px;
+
+        /* Text */
+        font-size: $font-size-20px;
+        color: $color-white;
+    }
 }
 .b-content{
     /* Position */
@@ -80,6 +98,7 @@
             /* Margins */
             padding-left: $banner-block-side-padding;
             padding-right: $banner-block-side-padding;
+
             /* Colors */
             background-color: $color-white;
 
@@ -127,7 +146,6 @@
         }
     }
 }
-
 .b-button{
     /* Size */
     width: $banner-button-width;
