@@ -15,7 +15,9 @@ Certifica-te de que tens as seguintes ferramentas instaladas:
 
 1. **Git**  
    Para verificar se o Git está instalado, abre o terminal e executa o seguinte comando:  
-   `git --version`  
+   ```bash
+   git --version
+   ```
 
    - **Mensagem de sucesso (exemplo):**  
      `git version 2.34.1`  
@@ -28,8 +30,10 @@ Certifica-te de que tens as seguintes ferramentas instaladas:
      Caso recebas uma mensagem semelhante, faz o download e instala o Git a partir de [Git Downloads](https://git-scm.com/downloads).
 
 2. **Docker**  
-   Verifica se o Docker está instalado com o comando:  
-   `docker --version`  
+   Verifica se o Docker está instalado com o comando:
+   ```bash  
+   docker --version
+   ```  
 
    - **Mensagem de sucesso (exemplo):**  
      `Docker version 20.10.7, build f0df350`  
@@ -41,7 +45,9 @@ Certifica-te de que tens as seguintes ferramentas instaladas:
 
 3. **Docker Compose**  
    Verifica se o Docker Compose está instalado com o comando:  
-   `docker-compose --version`  
+   ```bash
+   docker-compose --version  
+   ```
 
    - **Mensagem de sucesso (exemplo):**  
      `docker-compose version 1.29.2, build 5becea4c`  
@@ -63,15 +69,21 @@ Certifica-te de que tens as seguintes ferramentas instaladas:
 
 2. **Construir e iniciar os containers**
     Utiliza o Docker Compose para criar e iniciar os containers:
-    `docker-compose up --build`
+    ```bash
+    docker-compose up --build
+    ```
 
 3. **Aceder à aplicação**
     Quando o processo for concluído, a aplicação estará disponível no browser em:
-    `http://localhost:3000`
+    ```bash
+    http://localhost:3000
+    ```
 
 4. **Parar os containers**
     Para parar os containers em execução, utiliza:
-    `docker-compose down`
+    ```bash
+    docker-compose down
+    ```
 
    
 ## Autor
