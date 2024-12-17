@@ -2,14 +2,14 @@
 @use "sass:map";
 
 body{
-    @media screen and (min-width: calc(map.get($breakpoint, small) + 1px)) and (max-width: map.get($breakpoint, medium)) { // Medium size
+    @media screen and ((min-width: calc(map.get($breakpoint, small) + 1px)) and (max-width: map.get($breakpoint, medium))) { // Medium size
         .banner {
             position: absolute;
             width: 100%;
             height: 100%;
             top: $navbar-height;
             left: 0px;
-            background-color: rgb(64,64,64,0.3); // No background image
+            background-color: rgba(155, 2, 2, 0.3); // No background image
         }
     
         .navbar {
@@ -19,5 +19,16 @@ body{
             top: 0px;
             left: 0px;
         }
+
+        // .footer{
+        //     /* Position */
+        //     position: relative;
+        //     bottom: $size-0px;
+        //     left: $size-0px;
+        
+        //     /* Sizes */
+        //     width: 100%;
+        //     height: $footer-height;
+        // }
     }
 }

@@ -29,6 +29,7 @@ $font-size-20px: toRem(20);
 $banner-block-text-header-font-size: toRem(28);
 $banner-button-text: toRem(18);
 $banner-header-title-font-size: toRem(40);
+$banner-content-header-title-font-size: toRem(30);
 // -----------------------------------------
 // Sizes
 // -----------------------------------------
@@ -51,15 +52,20 @@ $navbar-item-height: toRem(50);
 $banner-width: toRem(1200); // Applied when large resolution
 $banner-header-height: toRem(120);
 $banner-block-width: toRem(900);
-$banner-block-height: toRem(240);
+$banner-block-height: toRem(360);
 $banner-block-margin-bottom: toRem(20);
 $banner-block-side-padding: toRem(10);
 $banner-block-side-width: calc(($banner-block-width / 2) - $banner-block-side-padding);
 $banner-block-text-header-padding: toRem(3);
+$banner-content-header-width: toRem(1000);
+$banner-content-header-height: toRem(60);
 
 /* Button Sizes */
 $banner-button-width: toRem(120);
 $banner-button-height: toRem(40);
+
+/* Footer Sizes */
+$footer-height: toRem(300);
 
 
 // -----------------------------------------

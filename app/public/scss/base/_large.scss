@@ -23,11 +23,6 @@ body{
             /* Text */
         }
     
-        // body {
-        // //   background: url('path/to/your/background-image.jpg') no-repeat center center;
-        // //   background-size: cover;
-        // }
-    
         .navbar {
             /* Position */
             position: fixed;
@@ -38,5 +33,16 @@ body{
             z-index: 9999;
 
         }
+
+        // .footer{
+        //     /* Position */
+        //     position: relative;
+        //     bottom: $size-0px;
+        //     left: $size-0px;
+        
+        //     /* Sizes */
+        //     width: 100%;
+        //     height: $footer-height;
+        // }
     }
 }
