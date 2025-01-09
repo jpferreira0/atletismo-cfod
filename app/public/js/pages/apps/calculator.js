@@ -1,45 +1,97 @@
-// List of events
+//? ----------------------------
+//? Constants
+//? ----------------------------
+
+// List of combined events by gender and track type
 const combined_events = {
-    "Masculino-Outdoor": ["Decatlo", "Triatlo (Sub-16)"],
-    "Feminino-Outdoor": ["Heptatlo", "Triatlo (Sub-16)"],
-    "Masculino-Indoor": ["Heptatlo", "Triatlo (Sub-16)"],
-    "Feminino-Indoor": ["Pentatlo", "Triatlo (Sub-16)"],
+    /* Masculino*/
+    "Masculino-Outdoor": ["Decatlo"],
+    "Masculino-Indoor": ["Heptatlo"],
+    /* Feminino */
+    "Feminino-Outdoor": ["Heptatlo"],
+    "Feminino-Indoor": ["Pentatlo"],
 };
 
-const formulas = {
-    "100m": { A: 25.4347, B: 18, C: 1.81 },
-    "Salto em Comprimento": { A: 0.14354, B: 220, C: 1.4 },
-    "Lançamento do Peso": { A: 51.39, B: 1.5, C: 1.05 },
-    
-};
-
-const competition_types = {
-    "Track-events": ["100m", "200m", "400m", "800m", "1500m", "5000m", "10000m", "110m Barreiras", "400m Barreiras", "3000m Obstáculos", "3000m Marcha", "5000m Marcha", "10000m Marcha"],
-    "Jumps": ["Salto em Comprimento", "Salto em Altura", "Salto com Vara", "Triplo Salto"],
-    "Throws": ["Lançamento do Peso", "Lançamento do Disco", "Lançamento do Dardo", "Lançamento do Martelo"],
-}
-
+// List of events (in order) per combined event
 const events = {
     /* Masculino-Outdoor */
     "Masculino-Outdoor-Decatlo": ["100m", "Salto em Comprimento", "Lançamento do Peso", "Salto em Altura", "400m", "110m Barreiras", "Lançamento do Disco", "Salto com Vara", "Lançamento do Dardo", "1500m"],
-    "Masculino-Outdoor-Triatlo (Sub-16)": ["60m", "Salto em Comprimento", "Lançamento do Peso"],
     /* Masculino-Indoor */
     "Masculino-Indoor-Heptatlo": ["60m", "Salto em Comprimento", "Lançamento do Peso", "Salto em Altura", "60m Barreiras", "Salto com Vara", "1000m"],
-    "Masculino-Indoor-Triatlo (Sub-16)": ["60m", "Salto em Comprimento", "Lançamento do Peso"],
     /* Feminino-Outdoor */
     "Feminino-Outdoor-Heptatlo": ["100m Barreiras", "Salto em Altura", "Lançamento do Peso", "200m", "Salto em Comprimento", "Lançamento do Dardo", "800m"],
-    "Feminino-Outdoor-Triatlo (Sub-16)": ["60m", "Salto em Comprimento", "Lançamento do Peso"],
     /* Feminino-Indoor */
     "Feminino-Indoor-Pentatlo": ["60m Barreiras", "Salto em Altura", "Lançamento do Peso", "Salto em Comprimento", "800m"],
-    "Feminin-Indoor-Triatlo (Sub-16)": ["60m", "Salto em Comprimento", "Lançamento do Peso"],
 };
 
+// List of events by each type, track events (in seconds), jumps (in centimeters) and throws (in meters)
+const types_events = {
+    /* Provas de Pista (em segundos) */
+    "Track-events": ["60m", "100m", "200m", "400m", "60m Barreiras", "100m Barreiras", "110m Barreiras"],
+    /* Provas de Pista (em minutos e segundos) */
+    "Track-events-minutes": ["800m", "1000m", "1500m"],
+    /* Provas de Saltos (em centímetros) */
+    "Jumps": ["Salto em Comprimento", "Salto em Altura", "Salto com Vara"],
+    /* Provas de Lançamentos (em metros) */
+    "Throws": ["Lançamento do Peso", "Lançamento do Disco", "Lançamento do Dardo"],
+}
+
+// List of constant values (A, B and C) used in the formulas to calculate the points for each event
+const formula_constants_events = {
+    // --------------------------------
+    // Provas de Pista
+    // --------------------------------
+    /* Masculino */
+    "Masculino-60m": { A: 58.0150, B: 11.5, C: 1.81 },
+    "Masculino-100m": { A: 25.4347, B: 18, C: 1.81 },
+    "Masculino-400m": { A: 1.53775, B: 82, C: 1.81 },
+    "Masculino-1000m": { A: 0.08713, B: 305.5, C: 1.85 },
+    "Masculino-1500m": { A: 0.03768, B: 480, C: 1.85 },
+    "Masculino-60m Barreiras": { A: 20.5173, B: 15.5, C: 1.92 },
+    "Masculino-110m Barreiras": { A: 5.74352, B: 28.5, C: 1.92 },
+
+    /* Feminino */
+    "Feminino-200m": { A: 4.99087, B: 42.5, C: 1.81 },
+    "Feminino-800m": { A: 0.11193, B: 254, C: 1.88 },
+    "Feminino-60m Barreiras": { A: 20.0479, B: 17, C: 1.835 },
+    "Feminino-100m Barreiras": { A: 9.23076, B: 26.7, C: 1.835 },
+
+    // --------------------------------
+    // Provas de saltos
+    // --------------------------------
+    /* Masculino */
+    "Masculino-Salto em Comprimento": { A: 0.14354, B: 220, C: 1.4 },
+    "Masculino-Salto em Altura": { A: 0.8465, B: 75, C: 1.42 },
+    "Masculino-Salto com Vara": { A: 0.2797, B: 100, C: 1.35 },
+
+    /* Feminino */
+    "Feminino-Salto em Comprimento": { A: 0.188807, B: 210, C: 1.41 },
+    "Feminino-Salto em Altura": { A: 1.8465, B: 75, C: 1.348 },
+
+    // --------------------------------
+    // Provas de lançamentos
+    // --------------------------------
+    /* Masculino */
+    "Masculino-Lançamento do Peso": { A: 51.39, B: 1.5, C: 1.05 },
+    "Masculino-Lançamento do Disco": { A: 12.91, B: 4, C: 1.1 },
+    "Masculino-Lançamento do Dardo": { A: 10.14, B: 7, C: 1.08 },
+
+    /* Feminino */
+    "Feminino-Lançamento do Peso": { A: 56.0211, B: 1.5, C: 1.05 },
+    "Feminino-Lançamento do Dardo": { A: 15.9803, B: 3.8, C: 1.04 },
+
+};
 
 // HTML elements
 const genderSelector = document.getElementById("gender-selector");
 const trackSelector = document.getElementById("track-selector");
 const eventSelector = document.getElementById("event-selector");
 
+//? ----------------------------
+//? Main Functions
+//? ----------------------------
+
+// Taking in consideration the gender and track type, update the combined events options
 function updateEventOptions() {
     const gender = genderSelector.value;
     const track = trackSelector.value;
@@ -58,6 +110,7 @@ function updateEventOptions() {
     });
 }
 
+// Generate the table with the events
 function generateTable() {
     const gender = genderSelector.value;
     const track = trackSelector.value;
@@ -96,10 +149,20 @@ function generateTable() {
     const tbody = document.createElement("tbody");
     competitionsList.forEach((competition, index) => {
         const row = document.createElement("tr");
+        const isSpecial = types_events["Track-events-minutes"].includes(competition);
         row.innerHTML = `
             <td>${index + 1}</td>
             <td>${competition}</td>
-            <td><input type="text" class="mark-input" data-competition="${competition}" placeholder="Insira marca"></td>
+            <td>
+                ${
+                    isSpecial
+                        ? `
+                        <input type="text" class="mark-min-input" data-competition="${competition}" placeholder="Min">:
+                        <input type="text" class="mark-sec-input" data-competition="${competition}" placeholder="Seg">
+                        `
+                        : `<input type="text" class="mark-input" data-competition="${competition}" placeholder="Insira marca">`
+                }
+            </td>
             <td><input type="text" class="points-input" data-competition="${competition}" placeholder="0"></td>
         `;
         tbody.appendChild(row);
@@ -108,44 +171,96 @@ function generateTable() {
 
     // Adicione a tabela ao container
     tableContainer.appendChild(table);
-    addInputListeners(event);
+    addInputListeners(gender);
 }
 
-function calculatePoints(event, mark) {
-    const { A, B, C } = formulas[event] || {};
+//? ----------------------------
+//? Auxiliary Functions
+//? ----------------------------
+
+function calculatePoints(gender, event, mark) {
+    const { A, B, C } = formula_constants_events[`${gender}-${event}`] || {};
     if (!A || !B || !C) return 0;
-    //TODO: Atualizar tendo em conta se é salto, de pista ou lançamento (cada uma tem a sua fórmula)
-    return Math.floor(A * Math.pow(B - mark, C));
+    if (types_events["Track-events"].includes(event)) { return Math.floor(A * Math.pow(B - mark, C)); }
+    else if(types_events["Track-events-minutes"].includes(event)) { return Math.floor(A * Math.pow(B - mark, C)); }
+    else if (types_events["Jumps"].includes(event)) { return Math.floor(A * Math.pow((mark * 100) - B, C)); }
+    else if (types_events["Throws"].includes(event)) { return Math.floor(A * Math.pow(mark - B, C)); }
 }
 
-function calculateMark(event, points) {
-    const { A, B, C } = formulas[event] || {};
+function calculateMark(gender, event, points) {
+    const { A, B, C } = formula_constants_events[`${gender}-${event}`] || {};
     if (!A || !B || !C) return 0;
-    //TODO: Atualizar tendo em conta se é salto, de pista ou lançamento (cada uma tem a sua fórmula)
-    return (B - Math.pow(points / A, 1 / C)).toFixed(2);
+    if (types_events["Track-events"].includes(event)) { return (B - Math.pow(points / A, 1 / C)).toFixed(2); }
+    else if(types_events["Track-events-minutes"].includes(event)) { 
+        mark = (B - Math.pow(points / A, 1 / C)).toFixed(2);
+        console.log("mark", mark);
+        return mark;
+    }
+    else if (types_events["Jumps"].includes(event)) { return ((B + Math.pow(points / A, 1 / C)) / 100).toFixed(2); }
+    else if (types_events["Throws"].includes(event)) { return (B + Math.pow(points / A, 1 / C)).toFixed(2); }
 }
 
-function addInputListeners(event) {
+// Function responsible to update the "mark" and "points" in "real-time"
+function addInputListeners(gender) {
     const markInputs = document.querySelectorAll(".mark-input");
     const pointsInputs = document.querySelectorAll(".points-input");
+    const markMinInputs = document.querySelectorAll(".mark-min-input");
+    const markSecInputs = document.querySelectorAll(".mark-sec-input");
 
     markInputs.forEach(input => {
         input.addEventListener("input", (e) => {
             const competition = e.target.dataset.competition;
             const mark = parseFloat(e.target.value.replace(",", "."));
-            const points = isNaN(mark) ? 0 : calculatePoints(event, mark);
+            const points = isNaN(mark) ? 0 : calculatePoints(gender, competition, mark);
             const pointsInput = document.querySelector(`.points-input[data-competition="${competition}"]`);
             if (pointsInput) pointsInput.value = points;
         });
     });
 
+    markMinInputs.forEach(input => {
+        input.addEventListener("input", (e) => {
+            // Also gets what is in the seconds input (if empty assume 0)
+            const secInput = document.querySelector(`.mark-sec-input[data-competition="${e.target.dataset.competition}"]`);
+            const competition = e.target.dataset.competition;
+            const markMin = parseFloat(e.target.value.replace(",", ".")) || 0;
+            const markSec = parseFloat(secInput.value.replace(",", ".")) || 0;
+            const mark = markMin * 60 + markSec;
+            const points = isNaN(mark) ? 0 : calculatePoints(gender, competition, mark);
+            const pointsInput = document.querySelector(`.points-input[data-competition="${competition}"]`);
+            if (pointsInput) pointsInput.value = points;
+        });
+    });
+
+    markSecInputs.forEach(input => {
+        input.addEventListener("input", (e) => {
+            // Also gets what is in the seconds input (if empty assume 0)
+            const minInput = document.querySelector(`.mark-min-input[data-competition="${e.target.dataset.competition}"]`);
+            const competition = e.target.dataset.competition;
+            const markSec = parseFloat(e.target.value.replace(",", ".")) || 0;
+            const markMin = parseFloat(minInput.value.replace(",", ".")) || 0;
+            const mark = markMin * 60 + markSec;
+            const points = isNaN(mark) ? 0 : calculatePoints(gender, competition, mark);
+            const pointsInput = document.querySelector(`.points-input[data-competition="${competition}"]`);
+            if (pointsInput) pointsInput.value = points;
+        });
+    });
+    
     pointsInputs.forEach(input => {
         input.addEventListener("input", (e) => {
             const competition = e.target.dataset.competition;
             const points = parseInt(e.target.value, 10);
-            const mark = isNaN(points) ? 0 : calculateMark(event, points);
-            const markInput = document.querySelector(`.mark-input[data-competition="${competition}"]`);
-            if (markInput) markInput.value = mark;
+            const mark = isNaN(points) ? 0 : calculateMark(gender, competition, points);
+            if (types_events["Track-events-minutes"].includes(competition)) {
+                const min = Math.floor(mark / 60);
+                const sec = (((mark * 100) % 6000) / 100).toFixed(2)
+                const markMinInput = document.querySelector(`.mark-min-input[data-competition="${competition}"]`);
+                const markSecInput = document.querySelector(`.mark-sec-input[data-competition="${competition}"]`);
+                if (markMinInput) markMinInput.value = min;
+                if (markSecInput) markSecInput.value = sec;
+            } else {
+                const markInput = document.querySelector(`.mark-input[data-competition="${competition}"]`);
+                if (markInput) markInput.value = mark;
+            }
         });
     });
 }
