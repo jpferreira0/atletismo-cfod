@@ -1,1 +1,49 @@
-<h1>Calculadora de pontos</h1>
+<div class="banner">
+    <div class="b-header">
+        <span class="b-header-title">Calculadora de pontos</span><br>
+        <span class="b-header-slogan">Calculadora de pontos para competições de atletismo</span>
+    </div>
+    <div class="b-content">
+        <div class="b-content-eventselector">
+            <div class="b-content-eventselector-gender">
+                <div class="b-content-eventselector-gender-header">
+                    <span>Escolhe o género</span>
+                </div>
+                <div class="b-content-eventselector-gender-select">
+                    <select id="gender-selector">
+                        <option value="">-- Selecione --</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Feminino">Feminino</option>
+                    </select>
+                </div>
+            </div>
+            <div class="b-content-eventselector-track">
+                <div class="b-content-eventselector-track-header">
+                    <span>Escolhe a pista</span>
+                </div>
+                <div class="b-content-eventselector-track-select">
+                    <select id="track-selector">
+                        <option value="">-- Selecione --</option>
+                        <option value="Indoor">Indoor</option>
+                        <option value="Outdoor">Outdoor</option>
+                    </select>
+                </div>
+            </div>
+            <div class="b-content-eventselector-event">
+                <div class="b-content-eventselector-event-header">
+                    <span>Escolhe a competição</span>
+                </div>
+                <div class="b-content-eventselector-event-select">
+                    <select id="event-selector">
+                        <option value="">-- Selecione --</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="b-content-table" id="table-container">
+            
+        </div>
+    </div>
+</div>
+
+<script src="/js/pages/apps/calculator.js"></script>

@@ -5,18 +5,27 @@
 // Colors
 // -----------------------------------------
 
-/* Common Colors */
+/* Primary Colors */
+
+$color-primary: #bdbdbd; // To be used in 60% of the screen (background)
+$color-primary-v2: #f5f5f5; // Another version of the primary color
+
+/* Secondary Colors */
+$color-secondary: #333538; // To be used in 30% of the screen (main elements)
+
+/* Tertiary Colors */
+$color-tertiary: #e7e43c; // To be used in 10% of the screen (highlights)
+
+/* Fixed Colors */
 $color-blue: #0d58a6;
 $color-blue-light: #2c82d1;
-$color-white: #fff;
+$color-white: #ffffff;
 $color-black: #000;
-
-$color-secondary: #444;
 
 // -----------------------------------------
 // Fonts
 // -----------------------------------------
-$font-stack: Arial, sans-serif;
+$font-family: Arial, sans-serif;
 
 /* --- Font Sizes --- */
 
@@ -52,7 +61,7 @@ $navbar-item-height: toRem(50);
 $banner-width: toRem(1200); // Applied when large resolution
 $banner-header-height: toRem(120);
 $banner-block-width: toRem(900);
-$banner-block-height: toRem(360);
+$banner-block-height: toRem(320);
 $banner-block-margin-bottom: toRem(20);
 $banner-block-side-padding: toRem(10);
 $banner-block-side-width: calc(($banner-block-width / 2) - $banner-block-side-padding);

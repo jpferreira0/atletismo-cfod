@@ -47,6 +47,8 @@
 
     /* Colors */
     background-color: $color-white;
+    
+
 
     .b-content-block{
         /* Position */
@@ -63,10 +65,10 @@
         margin-bottom: $banner-block-margin-bottom;
 
         /* Border */
-        border-style: solid;
-        border-width: toRem(5) toRem(10);
-        border-color: $color-blue;
-        border-radius: toRem(5);
+        // border-style: solid;
+        // border-width: toRem(5) toRem(10);
+        // border-color: $color-blue;
+        // border-radius: toRem(5);
 
         .b-content-block-left{
             /* Position */
@@ -143,6 +145,7 @@
                 left: calc(50% - ($banner-button-width / 2));
 
                 /* Text */
+                
             }
         }
     }

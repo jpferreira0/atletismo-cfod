@@ -3,7 +3,7 @@
 
 .navbar {
     background: rgba($color-blue, 0.8);
-    background: linear-gradient(90deg, rgb(52, 137, 177) 0%, $color-blue 50%, $color-blue-light 100%);
+    background: linear-gradient(90deg, rgb(52, 137, 177) 0%, $color-white 50%, $color-blue-light 100%);
 
     @media screen and (min-width: calc(map.get($breakpoint, medium) + 1px)) { // Large size
 
