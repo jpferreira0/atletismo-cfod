@@ -1,0 +1,32 @@
+@use '../abstracts' as *;
+
+.b-content-calculator {
+    /* Position */
+    position: relative;
+    top: 10px;
+    left: $size-10px;
+
+    /* Sizes */
+    width: 100%; 
+    height: auto;
+
+    /* Colors */
+    background-color: $color-blue;
+
+    /* Margins */
+    margin-top: $size-25px;
+    padding: $size-25px;
+
+    /* Text */
+    font-size: $font-size-20px;
+    color: $color-white;
+}
+
+.b-content-table {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}

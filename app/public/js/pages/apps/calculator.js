@@ -163,7 +163,7 @@ function generateTable() {
                         : `<input type="text" class="mark-input" data-competition="${competition}" placeholder="Insira marca">`
                 }
             </td>
-            <td><input type="text" class="points-input" data-competition="${competition}" placeholder="0"></td>
+            <td><input type="text" class="points-input" data-competition="${competition}" placeholder="Insira os pontos"></td>
         `;
         tbody.appendChild(row);
     });
@@ -191,22 +191,19 @@ function calculateMark(gender, event, points) {
     const { A, B, C } = formula_constants_events[`${gender}-${event}`] || {};
     if (!A || !B || !C) return 0;
     if (types_events["Track-events"].includes(event)) { return (B - Math.pow(points / A, 1 / C)).toFixed(2); }
-    else if(types_events["Track-events-minutes"].includes(event)) { 
-        mark = (B - Math.pow(points / A, 1 / C)).toFixed(2);
-        console.log("mark", mark);
-        return mark;
-    }
+    else if(types_events["Track-events-minutes"].includes(event)) { return (B - Math.pow(points / A, 1 / C)).toFixed(2); }
     else if (types_events["Jumps"].includes(event)) { return ((B + Math.pow(points / A, 1 / C)) / 100).toFixed(2); }
     else if (types_events["Throws"].includes(event)) { return (B + Math.pow(points / A, 1 / C)).toFixed(2); }
 }
 
-// Function responsible to update the "mark" and "points" in "real-time"
+// Function responsible to add the "listeners" to make the "mark" and "points" update in "real-time"
 function addInputListeners(gender) {
     const markInputs = document.querySelectorAll(".mark-input");
-    const pointsInputs = document.querySelectorAll(".points-input");
     const markMinInputs = document.querySelectorAll(".mark-min-input");
     const markSecInputs = document.querySelectorAll(".mark-sec-input");
+    const pointsInputs = document.querySelectorAll(".points-input");
 
+    // Added event listeners to the mark inputs (occurs everytime when the user types a value)
     markInputs.forEach(input => {
         input.addEventListener("input", (e) => {
             const competition = e.target.dataset.competition;
@@ -214,6 +211,7 @@ function addInputListeners(gender) {
             const points = isNaN(mark) ? 0 : calculatePoints(gender, competition, mark);
             const pointsInput = document.querySelector(`.points-input[data-competition="${competition}"]`);
             if (pointsInput) pointsInput.value = points;
+            calculateTotalPoints();
         });
     });
 
@@ -228,6 +226,7 @@ function addInputListeners(gender) {
             const points = isNaN(mark) ? 0 : calculatePoints(gender, competition, mark);
             const pointsInput = document.querySelector(`.points-input[data-competition="${competition}"]`);
             if (pointsInput) pointsInput.value = points;
+            calculateTotalPoints();
         });
     });
 
@@ -242,6 +241,7 @@ function addInputListeners(gender) {
             const points = isNaN(mark) ? 0 : calculatePoints(gender, competition, mark);
             const pointsInput = document.querySelector(`.points-input[data-competition="${competition}"]`);
             if (pointsInput) pointsInput.value = points;
+            calculateTotalPoints();
         });
     });
     
@@ -261,8 +261,21 @@ function addInputListeners(gender) {
                 const markInput = document.querySelector(`.mark-input[data-competition="${competition}"]`);
                 if (markInput) markInput.value = mark;
             }
+            calculateTotalPoints();
         });
     });
+
+}
+
+function calculateTotalPoints() {
+    const pointsInputs = document.querySelectorAll(".points-input");
+    let totalPoints = 0;
+    pointsInputs.forEach(input => {
+        const points = parseInt(input.value, 10);
+        if (!isNaN(points)) totalPoints += points;
+    });
+    let totalPointsField = document.getElementById("total-points");
+    totalPointsField.textContent = totalPoints;
 }
 
 // If the user changes one of the selectors, update the event options

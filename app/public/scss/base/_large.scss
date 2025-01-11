@@ -3,12 +3,23 @@
 
 body{
     @media screen and (min-width: calc(map.get($breakpoint, medium) + 1px)) { // Large size 1200px and above
+
         background-color: $color-secondary;
+        .navbar {
+            /* Position */
+            position: fixed;
+            top: $size-0px;
+            left: $size-0px;
+            z-index: 9999;
+            /* Sizes */
+            width: 100%;
+            height: $navbar-height;
+        }
 
         .banner {
             /* Position */
-            position: absolute;
-            top: $navbar-height;
+            position: relative;
+            top: $size-0px;
             left: calc((100% - $banner-width) / 2);
 
             /* Sizes */
@@ -18,31 +29,21 @@ body{
             /* Colors */
             background-color: $color-white;
 
-            /* Border */
+            /* Margins */
+            padding-top: 1200px;
 
             /* Text */
         }
-    
-        .navbar {
+
+        .footer{
             /* Position */
-            position: fixed;
-            width: 100%;
-            height: $navbar-height;
-            top: 0px;
-            left: 0px;
-            z-index: 9999;
-
-        }
-
-        // .footer{
-        //     /* Position */
-        //     position: relative;
-        //     bottom: $size-0px;
-        //     left: $size-0px;
+            position: relative;
+            bottom: $size-0px;
+            left: $size-0px;
         
-        //     /* Sizes */
-        //     width: 100%;
-        //     height: $footer-height;
-        // }
+            /* Sizes */
+            width: 100%;
+            height: $footer-height;
+        }
     }
 }

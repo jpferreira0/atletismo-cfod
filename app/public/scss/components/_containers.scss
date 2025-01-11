@@ -2,7 +2,7 @@
 
 .b-header{
     /* Position */
-    position: absolute;
+    position: relative;
     top: $size-0px;
     left: $size-0px;
 
@@ -38,7 +38,7 @@
 .b-content{
     /* Position */
     position: relative;
-    top: $banner-header-height;
+    top: $size-0px;
     left: $size-0px;
 
     /* Sizes */
@@ -47,6 +47,9 @@
 
     /* Colors */
     background-color: $color-white;
+
+    /* Margins & Paddings */
+    // padding-top: $banner-header-height;
     
 
 

@@ -1,6 +1,9 @@
 @use '../abstracts' as *;
 
 .footer{
+    /* Position */
+    // position: relative;
+    // bottom: 0px;
     /* Colors */
     background-color: $color-blue;
 }

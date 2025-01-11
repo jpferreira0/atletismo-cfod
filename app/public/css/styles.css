@@ -70,27 +70,38 @@
   body {
     background-color: #333538;
   }
+  body .navbar {
+    /* Position */
+    position: fixed;
+    top: 0rem;
+    left: 0rem;
+    z-index: 9999;
+    /* Sizes */
+    width: 100%;
+    height: 7.5rem;
+  }
   body .banner {
     /* Position */
-    position: absolute;
-    top: 7.5rem;
+    position: relative;
+    top: 0rem;
     left: calc((100% - 75rem) / 2);
     /* Sizes */
     width: 75rem;
     height: 100%;
     /* Colors */
     background-color: #ffffff;
-    /* Border */
+    /* Margins */
+    padding-top: 1200px;
     /* Text */
   }
-  body .navbar {
+  body .footer {
     /* Position */
-    position: fixed;
+    position: relative;
+    bottom: 0rem;
+    left: 0rem;
+    /* Sizes */
     width: 100%;
-    height: 7.5rem;
-    top: 0px;
-    left: 0px;
-    z-index: 9999;
+    height: 18.75rem;
   }
 }
 
@@ -306,13 +317,14 @@
 }
 
 .footer {
+  /* Position */
   /* Colors */
   background-color: #0d58a6;
 }
 
 .b-header {
   /* Position */
-  position: absolute;
+  position: relative;
   top: 0rem;
   left: 0rem;
   /* Sizes */
@@ -343,13 +355,14 @@
 .b-content {
   /* Position */
   position: relative;
-  top: 7.5rem;
+  top: 0rem;
   left: 0rem;
   /* Sizes */
   width: 100%;
   height: auto;
   /* Colors */
   background-color: #ffffff;
+  /* Margins & Paddings */
 }
 .b-content .b-content-block {
   /* Position */
@@ -507,6 +520,33 @@
 html {
   scrollbar-width: thin; /* Width of the scrollbar */
   scrollbar-color: #888 #f1f1f1; /* Color of the scrollbar thumb and track */
+}
+
+.b-content-calculator {
+  /* Position */
+  position: relative;
+  top: 10px;
+  left: 0.625rem;
+  /* Sizes */
+  width: 100%;
+  height: auto;
+  /* Colors */
+  background-color: #0d58a6;
+  /* Margins */
+  margin-top: 1.5625rem;
+  padding: 1.5625rem;
+  /* Text */
+  font-size: 1.25rem;
+  color: #ffffff;
+}
+
+.b-content-table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
 }
 
 /*# sourceMappingURL=styles.css.map */
