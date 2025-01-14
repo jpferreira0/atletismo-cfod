@@ -21,6 +21,8 @@ $color-blue: #0d58a6;
 $color-blue-light: #2c82d1;
 $color-white: #ffffff;
 $color-black: #000;
+$color-light-gray: #f5f5f5;
+$color-light-blue: #5eb4ff;
 
 // -----------------------------------------
 // Fonts
@@ -33,6 +35,8 @@ $font-family: Arial, sans-serif;
 $font-size-16px: toRem(16);
 $font-size-18px: toRem(18);
 $font-size-20px: toRem(20);
+$font-size-24px: toRem(24);
+$font-size-28px: toRem(28);
 
 /* Personalized Font Sizes */
 $banner-block-text-header-font-size: toRem(28);
@@ -56,6 +60,7 @@ $size-100px: toRem(100);
 $navbar-height: toRem(120); // Applied when large resolution
 $navbar-width: toRem(250); // Applied when small resolution
 $navbar-item-height: toRem(50);
+$navbar-item-width: toRem(120);
 
 /* Banner Sizes */
 $banner-width: toRem(1200); // Applied when large resolution
@@ -74,7 +79,7 @@ $banner-button-width: toRem(120);
 $banner-button-height: toRem(40);
 
 /* Footer Sizes */
-$footer-height: toRem(300);
+$footer-height: toRem(500);
 
 
 // -----------------------------------------

@@ -4,7 +4,7 @@
 body{
     @media screen and ((min-width: calc(map.get($breakpoint, small) + 1px)) and (max-width: map.get($breakpoint, medium))) { // Medium size
         .banner {
-            position: absolute;
+            position: relative;
             width: 100%;
             height: 100%;
             top: $navbar-height;
@@ -13,22 +13,22 @@ body{
         }
     
         .navbar {
-            position: absolute;
+            position: relative;
             width: 100%;
             height: $navbar-height;
             top: 0px;
             left: 0px;
         }
 
-        // .footer{
-        //     /* Position */
-        //     position: relative;
-        //     bottom: $size-0px;
-        //     left: $size-0px;
+        .footer{
+            /* Position */
+            position: relative;
+            bottom: $size-0px;
+            left: $size-0px;
         
-        //     /* Sizes */
-        //     width: 100%;
-        //     height: $footer-height;
-        // }
+            /* Sizes */
+            width: 100%;
+            height: $footer-height;
+        }
     }
 }

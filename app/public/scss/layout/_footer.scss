@@ -1,9 +1,76 @@
 @use '../abstracts' as *;
 
 .footer{
-    /* Position */
-    // position: relative;
-    // bottom: 0px;
-    /* Colors */
     background-color: $color-blue;
+
+    .f-content{
+        color: $color-white;
+        //padding-left: 20px;
+        width: 300px;
+        height: 100%;
+
+        .f-c-contacts{
+            // display: flex;
+            position: absolute;
+            top: 0px;
+            left: 30px;
+            gap: 1.5rem;
+            padding-top: 10px;
+            padding-bottom: 10px;
+
+            .f-c-c-socials{
+                display: flex;
+                gap: 1.5rem;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+        }
+
+        .f-c-menu{
+            position: absolute;
+            left: 550px;
+            //display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 1rem;
+
+            ul{
+                list-style-type: none;
+                padding-left: 0px;
+            }
+            a{
+                color: $color-white;
+                text-decoration: none;
+                font-size: 1.2rem;
+            }
+            li{
+                padding-bottom: 2px;
+            }
+
+            a:hover{
+                color: $color-white;
+                text-decoration: underline;
+            }
+        }
+
+        .f-c-location{
+            position: absolute;
+            left: 900px;
+            padding-top: 10px;
+            font-size: 1rem;
+
+            a{
+                color: $color-white;
+                text-decoration: none;
+                font-size: 1.2rem;
+                display: block;
+            }
+            a:hover{
+                color: $color-white;
+                text-decoration: underline;
+            }
+        }
+    }
 }

@@ -4,6 +4,8 @@
 body{
     @media screen and (min-width: calc(map.get($breakpoint, medium) + 1px)) { // Large size 1200px and above
 
+        margin: 0px;
+        padding: 0;
         background-color: $color-secondary;
         .navbar {
             /* Position */
@@ -23,14 +25,16 @@ body{
             left: calc((100% - $banner-width) / 2);
 
             /* Sizes */
-            width: $banner-width; 
-            height: 100%;
+            width: $banner-width;
+            // Make the height take the highest of these two values: height of the banner (depends on its content) or 100% of the viewport
+            height: max(100%, 100vh);
             
             /* Colors */
             background-color: $color-white;
 
             /* Margins */
-            padding-top: 1200px;
+            // margin-bottom: -21px; //FIXME: This is a hack to avoid a small gap between the banner and the footer
+            padding-top: $navbar-height;
 
             /* Text */
         }
@@ -44,6 +48,7 @@ body{
             /* Sizes */
             width: 100%;
             height: $footer-height;
+
         }
     }
 }

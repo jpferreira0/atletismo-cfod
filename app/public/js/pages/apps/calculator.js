@@ -129,6 +129,12 @@ function generateTable() {
         return;
     }
 
+    // Menciona qual é o evento selecionado
+    const eventTitle = document.createElement("h3");
+    eventTitle.textContent = event + '-' + track + ' ' + gender;
+    tableContainer.appendChild(eventTitle);
+
+
     // Crie a tabela
     const table = document.createElement("table");
     table.classList.add("competitions-table");
@@ -282,3 +288,25 @@ function calculateTotalPoints() {
 genderSelector.addEventListener("change", updateEventOptions);
 trackSelector.addEventListener("change", updateEventOptions);
 eventSelector.addEventListener("change", generateTable);
+
+//? ----------------------------
+//? Initialization
+//? ----------------------------
+
+window.addEventListener('DOMContentLoaded', () => {
+    // Define o valor padrão para o género
+    document.getElementById('gender-selector').value = "Masculino";
+
+    // Define o valor padrão para a pista
+    document.getElementById('track-selector').value = "Outdoor";
+
+    updateEventOptions();
+
+    // Define o valor padrão para a competição
+    const eventSelector = document.getElementById('event-selector');
+    eventSelector.value = "Decatlo";
+
+    generateTable();
+    // Opcional: Trigga evento 'change' para simular seleção (se necessário)
+    eventSelector.dispatchEvent(new Event('change'));
+});

@@ -65,7 +65,7 @@
         
         /* Margins */
         margin-top: $banner-block-margin-bottom;
-        margin-bottom: $banner-block-margin-bottom;
+        padding-bottom: $banner-block-margin-bottom;
 
         /* Border */
         // border-style: solid;
@@ -93,11 +93,6 @@
             /* Sizes */
             width: $banner-block-side-width;
             height: $banner-block-height;
-        }
-
-        .b-content-block-image{
-            /* MUDAR */
-            background-color: $color-black;
         }
 
         .b-content-block-text{
@@ -164,7 +159,7 @@
         height: auto;
 
         /* Margins */
-        margin-top: $size-25px;
+        // margin-top: $size-25px;
 
         .b-content-section-header{
             /* Position */

@@ -7,11 +7,11 @@
     left: $size-10px;
 
     /* Sizes */
-    width: 100%; 
+    width: 80%; 
     height: auto;
 
     /* Colors */
-    background-color: $color-blue;
+    //background-color: $color-blue;
 
     /* Margins */
     margin-top: $size-25px;
@@ -19,7 +19,7 @@
 
     /* Text */
     font-size: $font-size-20px;
-    color: $color-white;
+    //color: $color-white;
 }
 
 .b-content-table {
@@ -27,6 +27,6 @@
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
-    border: 1px solid #ccc;
+    //border: 1px solid #ccc;
     margin-bottom: 20px;
 }
